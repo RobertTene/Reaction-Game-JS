@@ -1,0 +1,102 @@
+<html>
+
+    
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Don't enter</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'>
+    
+    <style>
+
+      *{
+        margin:0;
+        padding:0;
+      }
+
+    h1{
+        color:white;
+        font-family: 'Creepster';
+        color:white;
+        font-size: 60px;
+        display:flex;
+        justify-content: center;
+    }
+    h2{
+      color:white;
+      font-size:10px;
+    }
+    body,html{
+        background: black;
+        height:100%;
+
+    }
+    .wrapper{
+      padding-top:150px;
+      padding-left:150px;
+      padding-right:150px;
+
+
+
+    }
+    .backDoor
+      {
+        background: url("static.gif");
+        position:relative;
+        width:120px;
+        height:300px;
+        margin: 0 auto;
+      }
+
+      .door
+      {
+        background: url("creepyOldDoor.png");
+        background-size: contain;
+        position:relative;
+        width:120px;
+        height:300px;
+        transform-origin: left;
+        /*Speed of the Door animation*/
+        transition: all 2.5s ease-in-out;
+      }
+
+      .doorOpen
+      {
+        /*prespectiv creates the door open effect*/
+        transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
+      }
+
+          
+    </style>
+    <link rel="stylesheet" type="text/css" href="animation.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="intro-text" id="intro-text">
+      <h2>DON'T ENTER</h2>
+    </div>
+    <div class="backDoor">
+      <div class="door">  
+      </div>
+    </div>
+    <div id="play"></div>
+  </div>
+<script type="text/javascript">
+
+var element = document.querySelector(".door");
+element.addEventListener("click", toggleDoor);
+
+function toggleDoor() {
+  element.classList.toggle("doorOpen");
+}
+
+</script>
+
+</body>
+
+
+
+</html>
